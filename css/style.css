@@ -1,0 +1,36 @@
+
+:root { font-size: 14px; }
+@media (min-width: 350px) { :root { font-size: 16px; } }
+@media (min-width: 640px) { :root { font-size: 28px; } }
+@media (min-width: 1440px) { :root { font-size: 1.25vw; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body{
+  background-color: white;
+ 
+}
+
+.container {
+    height: 0;             /* collapse the container's height */
+    width: width-value;    /* specify any width you want (a percentage value, basically) */
+    /* apply a padding using the following formula */
+    /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+
+	font-size: 8px;
+ 
+  margin: 0 auto;
+    position: relative;    /* create positioning context for svg */
+}
+
+body.logo {
+	stroke-opacity: 1;
+  fill-opacity:1;
+}
+

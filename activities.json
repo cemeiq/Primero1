@@ -1,0 +1,12 @@
+[
+{"id": "org.sugarlabs.MazeWebActivity", "name": "Maze Web", "version": 2, "directory": "activities/MazeWeb.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "org.olpcfrance.PaintActivity", "name": "Paint", "version": 1, "directory": "activities/Paint.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "org.olpcfrance.TamTamMicro", "name": "TamTam Micro", "version": 1, "directory": "activities/TamTamMicro.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "com.homegrownapps.reflection", "name": "Reflection", "version": 1, "directory": "activities/Reflection.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "com.homegrownapps.xoeditor", "name": "XO Editor", "version": 1, "directory": "activities/XOEditor.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "org.sugarlabs.MyActivity", "name": "ActivityTemplate", "version": 1, "directory": "activities/ActivityTemplate.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+  {"id": "org.olpcfrance.MemorizeActivity", "name": "Memorize", "version": 1, "directory": "activities/Memorize.activity", "icon": "activity/activity-icon.svg", "favorite": true, "activityId": null},
+	{"id": "org.sugarlabs.Clock", "name": "Clock Web", "version": 1, "directory": "activities/Clock.activity", "icon": "activity/activity-clock.svg", "favorite": true, "activityId": null}
+
+
+]

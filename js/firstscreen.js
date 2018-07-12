@@ -70,7 +70,7 @@ enyo.kind({
 			preferences.setName(name);
 
 			// Launch Desktop
-			document.getElementById("toolbar").style.backgroundColor = this.backgroundColor;
+		//	document.getElementById("toolbar").style.backgroundColor = this.backgroundColor;
 			document.getElementById("canvas").style.overflowY = "auto";
 			app = new Sugar.Desktop();
 			app.renderInto(document.getElementById("canvas"));

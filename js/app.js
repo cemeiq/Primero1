@@ -21,7 +21,7 @@ define(["webL10n", "sugar-web/graphics/icon", "sugar-web/graphics/xocolor", "sug
 	// Main program where we know which screen will come first
 	var main = function() {
 		if (!preferenceset) {
-			app = new Sugar.FirstScreen();
+			app = new Sugar.Desktop();
 		} else {
 			app = new Sugar.Desktop();
 		}

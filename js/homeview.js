@@ -1,7 +1,7 @@
 
 // Sugar Libraries (initialized by require)
 var app = null;
-var toolbar = null;
+//var toolbar = null;
 var mouse = {position: {x: -1, y: -1}};
 var iconLib;
 var xoPalette;
@@ -36,14 +36,14 @@ enyo.kind({
 		this.inherited(arguments);
 		this.timer = null;
 		this.otherview = null;
-		this.toolbar = null;
-		util.setToolbar(this.getToolbar());
+	//	this.toolbar = null;
+	//	util.setToolbar(this.getToolbar());
 		// this.$.owner.setIcon({directory: "icons", icon: "owner-icon.svg"});
 		// this.$.owner.setPopupShow(enyo.bind(this, "showBuddyPopup"));
 		// this.$.owner.setPopupHide(enyo.bind(this, "hideBuddyPopup"));
 		// this.$.journal.setIcon({directory: "icons", icon: "activity-journal.svg"});
 		// this.restrictedModeInfo = { start: 0 };
-		util.hideNativeToolbar();
+		//util.hideNativeToolbar();
 
 		// Load and sort journal
 		this.loadJournal();
@@ -111,7 +111,7 @@ enyo.kind({
 		}
 	},
  //Load Sounds
- 
+
 	// Load and sort journal
 	loadJournal: function() {
 		this.journal = datastore.find();
@@ -210,7 +210,7 @@ enyo.kind({
 
 		// Compute center and radius
 		//var canvas_center = util.getCanvasCenter();
-		var icon_size = 90;
+		var icon_size = 100;
 		var icon_padding = icon_size*constant.iconSpacingFactor;
 		var semi_size = icon_size/2;
 		//var jdeltay = (canvas_center.dy < 480) ? -12 : 0;
@@ -363,6 +363,7 @@ enyo.kind({
 		this.$.table.applyStyle("height", "100%");
 		this.$.table.applyStyle("margin", "3.472% auto");
 		this.$.cell00.applyStyle("vertical-align", "top");
+
 		this.$.cell00.applyStyle("padding-left", "6.25%");
 		this.$.cell00.applyStyle("padding-top", "4.44%");
 		this.$.cell01.applyStyle("vertical-align", "top");
@@ -389,6 +390,8 @@ enyo.kind({
 		this.$.cell22.applyStyle("vertical-align", "top");
 		this.$.cell22.applyStyle("padding-left", "6.25%");
 		this.$.cell22.applyStyle("padding-top", "4.44%");
+
+
 
 		var newIcon = this.$.cell00.createComponent({
 			kind: "Sugar.Icon",
@@ -502,6 +505,15 @@ enyo.kind({
 	    newIcon.render();
 	},
 
+	//play Sounds
+	PlaySound1:function(melody) {
+			alert("On Press of "+melody);
+			var path = "C:/Users/Iqra Muhammad/Documents/Sugarizer/sugarizer-0.9/activities/TamTamMicro.activity/audio/"
+			var snd = new Audio(path + melody + ".mp3");
+			snd.play();
+	},
+//databasealarm.mp3
+
 	// Redraw, for example after a resized event
 	redraw: function() {
 		this.draw();
@@ -563,8 +575,8 @@ enyo.kind({
 
 		// Show desktop
 		if (newView == constant.radialView) {
-			util.setToolbar(this.getToolbar());
-			toolbar.setActiveView(constant.radialView);
+		//	util.setToolbar(this.getToolbar());
+		//	toolbar.setActiveView(constant.radialView);
 			this.$.otherview.hide();
 			this.$.desktop.show();
 			this.$.owner.show();
@@ -581,9 +593,9 @@ enyo.kind({
 
 		// Show list
 		if (newView == constant.listView) {
-			util.setToolbar(this.getToolbar());
+	//	util.setToolbar(this.getToolbar());
 		//	var filter = toolbar.getSearchText().toLowerCase();
-			toolbar.setActiveView(constant.listView);
+		//	toolbar.setActiveView(constant.listView);
 			this.otherview = this.$.otherview.createComponent({kind: "Sugar.DesktopListView", activities: preferences.getActivitiesByName(filter)});
 		}
 
@@ -594,14 +606,14 @@ enyo.kind({
 				window.clearInterval(this.timer);
 			}
 			this.otherview = this.$.otherview.createComponent({kind: "Sugar.Journal", journal: this.journal});
-			util.setToolbar(this.otherview.getToolbar());
+		//	util.setToolbar(this.otherview.getToolbar());
 		}
 
 		// Show neighborhood
 		else if (newView == constant.neighborhoodView) {
 			this.otherview = this.$.otherview.createComponent({kind: "Sugar.NeighborhoodView"});
-			toolbar.setActiveView(constant.neighborhoodView);
-			util.setToolbar(this.otherview.getToolbar());
+		//	toolbar.setActiveView(constant.neighborhoodView);
+		//	util.setToolbar(this.otherview.getToolbar());
 		}
 
 		this.$.otherview.show();
@@ -691,38 +703,43 @@ enyo.kind({
 		if (activity.instances !== undefined && activity.instances.length > 0 && activity.instances[0].metadata.title !== undefined) {
 			title = activity.instances[0].metadata.title;
 		} else {
-			title = l10n.get('NameActivity', {name: activity.name});
+		//	title = l10n.get('NameActivity', {name: activity.name});
 		}
 		this.getPopup().setHeader({
-			icon: activity,
+		//	icon: activity,
 			colorized: activity.instances !== undefined && activity.instances.length > 0,
 			colorizedColor: (activity.instances !== undefined && activity.instances.length > 0 && activity.instances[0].metadata.buddy_color) ? activity.instances[0].metadata.buddy_color : null,
-			name: activity.name,
-			title: title,
-			action: enyo.bind(this, "runActivity"),
+		//	name: activity.name,
+		//	title: title,
+			action: enyo.bind(this, "runNewActivity"),
 			data: [activity, null]
-		});
+		})
+
+
+		;
 		var items = [];
 		if (activity.instances) {
 			for(var i = 0 ; i < activity.instances.length && i < constant.maxPopupHistory; i++) {
 				items.push({
-					icon: activity,
-					colorized: true,
+				//	icon: activity,
+					colorized: false,
 					colorizedColor: (activity.instances[i].metadata.buddy_color ? activity.instances[i].metadata.buddy_color : null),
-					name: activity.instances[i].metadata.title,
+				//	name: activity.instances[i].metadata.title,
 					action: enyo.bind(this, "runOldActivity"),
 					data: [activity, activity.instances[i]]
 				});
 			}
 		}
 		this.getPopup().setItems(items);
-		this.getPopup().setFooter([{
-			icon: activity,
-			colorized: false,
-			name: l10n.get("StartNew"),
-			action: enyo.bind(this, "runNewActivity"),
-			data: [activity, null]
-		}]);
+	//	this.getPopup().setFooter([{
+		//	icon: activity,
+		//	colorized: false,
+			//name: l10n.get("StartNew"),
+		//	action: enyo.bind(this, "runNewActivity"),
+		//	data: [activity, null]
+	//	}])
+
+		;
 
 		// Show popup
 		this.getPopup().showPopup();

@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8" />
-<title>My Activity</title>
+<title>Math Sticks</title>
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
 <link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
 	href="lib/sugar-web/graphics/css/sugar-96dpi.css">
@@ -11,6 +11,7 @@
 	href="lib/sugar-web/graphics/css/sugar-200dpi.css">
 <link rel="stylesheet" href="css/activity.css">
 <script data-main="js/loader" src="lib/require.js"></script>
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
 	<script src="../lib/easeljs-NEXT.combined.js"></script>
 		<script type="text/javascript" src="../lib/tweenjs-NEXT.combined.js"></script>
 		<script id="editable">
@@ -48,6 +49,7 @@
 			var numInd = 0;
 			var stageBitmapArr = [];
 			var currObj;
+			var soundID = "Thunder";
 			function init() {
 				qn = getParameterByName("qn");
 				initValue = getParameterByName("inVal");
@@ -163,6 +165,12 @@
 				}
 				return input;
 			}
+			function loadSound () {
+  createjs.Sound.registerSound("audio/1.mp3", soundID);
+}
+function playSound () {
+  createjs.Sound.play(soundID);
+}
 			function setNumberScreen(){
 				currentNum = num[numInd];
 				mainNumTxt.text = currentNum;
@@ -214,6 +222,8 @@
 				stage.addChild(t);
 			}
 			function onNextBtnClick(){
+				loadSound();
+				playSound();
 				console.log("onNextBtnClick");
 				rodsCon.removeAllChildren();
 				for(var i = 0;i<stageBitmapArr.length;i++){
@@ -537,6 +547,8 @@
 					//console.log(" val :: " + evt.currentTarget.val);
 					//if(evt.currentTarget.val == 7)
 					//	rodsCon.visible = false;
+					loadSound();
+					playSound();
 					if (Math.abs(bitmap.oldX - bitmap.x) > 2 || Math.abs(bitmap.oldY - bitmap.y) > 2) {
 						clickCount = 0;
 						return;
@@ -616,7 +628,8 @@
 				});
 				bitmap.on("pressup", function (evt) {
 					//console.log("pos :: " + bitmap.x + " :: " + bitmap.y);
-
+					loadSound();
+					playSound();
 					update = true;
 					if (Math.abs(bitmap.oldX - bitmap.x) < 2 && Math.abs(bitmap.oldY - bitmap.y) < 2)
 						return;
@@ -676,6 +689,8 @@
 
 				// the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
 				bitmap.on("pressmove", function (evt) {
+					loadSound();
+					playSound();
 					this.x = evt.stageX + this.offset.x;
 					this.y = evt.stageY + this.offset.y;
 					// indicate that the stage should be updated on the next tick:
@@ -785,6 +800,8 @@
 				bitmap.x = 50;
 				bitmap.y = 110
 				bitmap.on("click",function (evt) {
+					loadSound();
+					playSound();
 		//			for (var i = 0; i < rodCount;i++) {
 					while (rods.length > 0) {
 						deleteRod(rods.pop());
@@ -888,6 +905,8 @@
 				});
 				hs.on("click", function (evt) {
 						console.log("click");
+						loadSound();
+						playSound();
 					if (currentAlpha == .4) {
 						currentAlpha = 1;
 						this.alpha = .2;

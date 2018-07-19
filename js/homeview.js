@@ -210,7 +210,7 @@ enyo.kind({
 
 		// Compute center and radius
 		//var canvas_center = util.getCanvasCenter();
-		var icon_size = 100;
+		var icon_size = 90;
 		var icon_padding = icon_size*constant.iconSpacingFactor;
 		var semi_size = icon_size/2;
 		//var jdeltay = (canvas_center.dy < 480) ? -12 : 0;
@@ -365,31 +365,31 @@ enyo.kind({
 		this.$.cell00.applyStyle("vertical-align", "top");
 
 		this.$.cell00.applyStyle("padding-left", "6.25%");
-		this.$.cell00.applyStyle("padding-top", "4.44%");
+		this.$.cell00.applyStyle("padding-top", "0.22%");
 		this.$.cell01.applyStyle("vertical-align", "top");
 		this.$.cell01.applyStyle("padding-left", "6.25%");
-		this.$.cell01.applyStyle("padding-top", "4.44%");
+		this.$.cell01.applyStyle("padding-top", "0.22%");
 		this.$.cell02.applyStyle("vertical-align", "top");
 		this.$.cell02.applyStyle("padding-left", "6.25%");
-		this.$.cell02.applyStyle("padding-top", "4.44%");
+		this.$.cell02.applyStyle("padding-top", "0.22%");
 		this.$.cell10.applyStyle("vertical-align", "top");
 		this.$.cell10.applyStyle("padding-left", "6.25%");
-		this.$.cell10.applyStyle("padding-top", "4.44%");
+		this.$.cell10.applyStyle("padding-top", "0.22%");
 		this.$.cell11.applyStyle("vertical-align", "top");
 		this.$.cell11.applyStyle("padding-left", "6.25%");
-		this.$.cell11.applyStyle("padding-top", "4.44%");
+		this.$.cell11.applyStyle("padding-top", "0.22%");
 		this.$.cell12.applyStyle("vertical-align", "top");
 		this.$.cell12.applyStyle("padding-left", "6.25%");
-		this.$.cell12.applyStyle("padding-top", "4.44%");
+		this.$.cell12.applyStyle("padding-top", "0.22%");
 		this.$.cell20.applyStyle("vertical-align", "top");
 		this.$.cell20.applyStyle("padding-left", "6.25%");
-		this.$.cell20.applyStyle("padding-top", "4.44%");
+		this.$.cell20.applyStyle("padding-top", "0.22%");
 		this.$.cell21.applyStyle("vertical-align", "top");
 		this.$.cell21.applyStyle("padding-left", "6.25%");
-		this.$.cell21.applyStyle("padding-top", "4.44%");
+		this.$.cell21.applyStyle("padding-top", "0.22%");
 		this.$.cell22.applyStyle("vertical-align", "top");
 		this.$.cell22.applyStyle("padding-left", "6.25%");
-		this.$.cell22.applyStyle("padding-top", "4.44%");
+		this.$.cell22.applyStyle("padding-top", "0.22%");
 
 
 

@@ -188,10 +188,6 @@
 #main-toolbar #clear-button {
   background-image: url(../icons/edit-clear.svg);
 }
-
-#stop-button {
- background-color:  RED;
-}
 #main-toolbar {}
 .palette .colors {
   list-style-type: none;

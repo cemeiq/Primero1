@@ -14,21 +14,21 @@ define(["activity/sample-ressources", "activity/palettes/template-palette", "act
         var TEMPLATE_SUMS = {
             name: "Addition", icon: "addition.svg", cards: [
                 [{text: "3+4"}, {text: "7"}],
-                [{text: "5+5"}, {text: "10"}],
-                [{text: "5+6"}, {text: "11"}],
+                [{text: "0+7"}, {text: "7"}],
+                [{text: "9+1"}, {text: "10"}],
                 [{text: "4+4"}, {text: "8"}],
                 [{text: "4+5"}, {text: "9"}],
                 [{text: "3+3"}, {text: "6"}],
                 [{text: "2+2"}, {text: "4"}],
                 [{text: "1+1"}, {text: "2"}],
                 [{text: "1+2"}, {text: "3"}],
-                [{text: "9+9"}, {text: "18"}],
-                [{text: "10+9"}, {text: "19"}],
-                [{text: "8+8"}, {text: "16"}],
-                [{text: "8+9"}, {text: "17"}],
-                [{text: "7+7"}, {text: "14"}],
-                [{text: "7+8"}, {text: "15"}],
-                [{text: "6+6"}, {text: "12"}]
+                [{text: "0+0"}, {text: "0"}],
+                [{text: "0+1"}, {text: "1"}],
+                [{text: "0+2"}, {text: "2"}],
+                [{text: "0+3"}, {text: "3"}],
+                [{text: "0+4"}, {text: "4"}],
+                [{text: "0+5"}, {text: "5"}],
+                [{text: "0+6"}, {text: "6"}]
             ],
             mode: MODE_SPLITTED
         };

@@ -7,9 +7,7 @@
     background-image: url(../activity/activity-icon.svg);
 }
 
-#stop-button {
- background-color:  RED;
-}
+
 
 #main-toolbar #network-button {
     background-image: url(../lib/sugar-web/graphics/icons/actions/zoom-home.svg);
@@ -89,9 +87,7 @@
     height:56px;
 }
 
-#body1{
-  background-color: YELLOW;
-}
+
 .palette .wrapper {
     min-width: 10px;
     padding: 5px;

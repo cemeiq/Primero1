@@ -5,7 +5,7 @@
 ## Table of Contents
 1. Basic Information
 2. About the Website/Project
-3.Steps on how to use the Primero1 web and android app
+3. Steps on how to use the Primero1 web and android app
 4. Description of Files and Folders
 5. Design Layout of Website/Project
 6. Developers
@@ -40,6 +40,8 @@ We have the following major features in Primero1:
 10. All the web, android and amazon apps made mobile responsive for all screen sizes.
 11. Certain features of some activities removed and adjusted for small children
 12. Extensive documentation of the project
+
+###Steps on how to use the Primero1 web and android app
 
 ### Internal URLs
 All internal URLs are referenced through absolute paths and not relative paths.

@@ -41,7 +41,7 @@ We have the following major features in Primero1:
 11. Certain features of some activities removed and adjusted for small children
 12. Extensive documentation of the project
 
-###Steps on how to use the Primero1 web and android app
+### Steps on how to use the Primero1 web and android app
 
 ### Internal URLs
 All internal URLs are referenced through absolute paths and not relative paths.

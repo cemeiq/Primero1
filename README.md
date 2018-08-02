@@ -190,19 +190,19 @@ This will contain:
 
 **Screenshot 1:**
 
-![image alt text](image_0.png)
+![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/1.png)
 
 **Screenshot 2:**
 
-![image alt text](image_1.jpg)
+![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/PIC-2.JPG)
 
 **Screenshot 3:**
 
-![image alt text](image_2.jpg)
+![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/pic8.JPG)
 
 **Screenshot 4:**
 
-![image alt text](image_3.jpg)
+![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/primero.JPG)
 
 ### Code and Contribution
 

@@ -480,29 +480,29 @@ enyo.kind({
 	    );
 	    newIcon.render();
 
-	    var newIcon = this.$.cell21.createComponent({
-			kind: "Sugar.Icon",
-			icon: activitiesList[7],  // HACK: Icon characteristics are embedded in activity object
-			size: icon_size,
-			ontap: "runMatchingActivity",
-			popupShow: enyo.bind(this, "showActivityPopup"),
-			popupHide: enyo.bind(this, "hideActivityPopup")
-		  },
-		  {owner: this}
-	    );
-	    newIcon.render();
+	    //var newIcon = this.$.cell21.createComponent({
+			//kind: "Sugar.Icon",
+			//icon: activitiesList[7],  // HACK: Icon characteristics are embedded in activity object
+			//size: icon_size,
+			//ontap: "runMatchingActivity",
+			//popupShow: enyo.bind(this, "showActivityPopup"),
+			//popupHide: enyo.bind(this, "hideActivityPopup")
+		  //},
+		  //{owner: this}
+	    //);
+	    //newIcon.render();
 
-			var newIcon = this.$.cell22.createComponent({
-			kind: "Sugar.Icon",
-			icon: activitiesList[8],  // HACK: Icon characteristics are embedded in activity object
-			size: icon_size,
-			ontap: "runMatchingActivity",
-			popupShow: enyo.bind(this, "showActivityPopup"),
-			popupHide: enyo.bind(this, "hideActivityPopup")
-		  },
-		  {owner: this}
-	    );
-	    newIcon.render();
+			//var newIcon = this.$.cell22.createComponent({
+			//kind: "Sugar.Icon",
+			//icon: activitiesList[8],  // HACK: Icon characteristics are embedded in activity object
+			//size: icon_size,
+			//ontap: "runMatchingActivity",
+			//popupShow: enyo.bind(this, "showActivityPopup"),
+			//popupHide: enyo.bind(this, "hideActivityPopup")
+		  //},
+		  //{owner: this}
+	    //);
+	    //newIcon.render();
 	},
 
 	//play Sounds

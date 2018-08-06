@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Math Sticks</title>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+<link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
+	href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+<link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
+	href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+<link rel="stylesheet" href="css/activity.css">
+<script data-main="js/loader" src="lib/require.js"></script>
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+	<script src="../lib/easeljs-NEXT.combined.js"></script>
+		<script type="text/javascript" src="../lib/tweenjs-NEXT.combined.js"></script>
+		<script id="editable">
+			var canvas, stage, container;
+			var savedBounds;
+			var rod10, rod9, rod8, rod7, rod6, rod5, rod4, rod3, rod2, rod1;
+			var rods = [];
+			var inRods = [];
+			var rodCount = 0;
+			var currentRow = 2;
+			var currentCol = 2;
+			var downTime;
+			var firstClickTime;
+			var clickCount = 0;
+			var update = true;
+			var currentAlpha = 1;
+		    var currentNum;
+			var rodsCon;
+			var t1,t2,t3,t4,t5,t6,t7,t8;
+			var score = 0;
+			var scoreTxt;
+			var nextBtn;
+			var begStartGridArr=[{r:2,c:2},{r:4,c:2},{r:8,c:2},{r:10,c:2},{r:2,c:22},{r:4,c:22},{r:8,c:22},{r:10,c:22}];
+			var arr9 = [{a:8,b:1,f1:false,f2:false},{a:1,b:8,f1:false,f2:false},{a:7,b:2,f1:false,f2:false},{a:2,b:7,f1:false,f2:false},{a:6,b:3,f1:false,f2:false},{a:3,b:6,f1:false,f2:false},{a:4,b:5,f1:false,f2:false},{a:5,b:4,f1:false,f2:false}];
+			var arr8 = [{a:1,b:7,f1:false,f2:false},{a:7,b:1,f1:false,f2:false},{a:2,b:6,f1:false,f2:false},{a:6,b:2,f1:false,f2:false},{a:3,b:5,f1:false,f2:false},{a:5,b:3,f1:false,f2:false},{a:4,b:4,f1:false,f2:false}];
+			var arr7 = [{a:1,b:6,f1:false,f2:false},{a:6,b:1,f1:false,f2:false},{a:2,b:5,f1:false,f2:false},{a:5,b:2,f1:false,f2:false},{a:3,b:4,f1:false,f2:false},{a:4,b:3,f1:false,f2:false}];
+			var arr6 = [ {a:1 , b:5,f1:false,f2:false},{a:5 , b:1,f1:false,f2:false},{a:2 , b:4,f1:false,f2:false},{ a:4 , b:2,f1:false,f2:false},{a:3 , b:3,f1:false,f2:false}];
+			var arr5 = [ {a:1 , b:4,f1:false,f2:false},{ a:4 , b:1,f1:false,f2:false},{a:2 , b:3,f1:false,f2:false},{ a:3 , b:2,f1:false,f2:false}];
+			var arr4 = [ {a:1 , b:3,f1:false,f2:false},{ a:3 , b:1,f1:false,f2:false},{ a:2 , b:2,f1:false,f2:false}];
+			var arr3 = [ {a:1 , b:2,f1:false,f2:false},{ a:2 , b:1,f1:false,f2:false}];
+			var arr2 = [ {a:1 , b:1,f1:false,f2:false}];
+
+			var mainNumTxt;
+			var num = [2,3,4,5,6,7,8,9];
+			var numInd = 0;
+			var stageBitmapArr = [];
+			var currObj;
+			var soundID = "Thunder";
+			function init() {
+				qn = getParameterByName("qn");
+				initValue = getParameterByName("inVal");
+				if (initValue != null && initValue != "") {
+		//			console.log(initValue);
+					inRods = initValue.split(':');
+				}
+				resize();
+				// create stage and point it to the canvas:
+				canvas = document.getElementById("testCanvas");
+				stage = new createjs.Stage(canvas);
+
+				// enable touch interactions if supported on the current device:
+				createjs.Touch.enable(stage);
+
+				// enabled mouse over / out events
+				stage.enableMouseOver(10);
+				stage.mouseMoveOutside = true; // keep tracking the mouse even when it leaves the canvas
+
+			    container = new createjs.Container();
+				stage.addChild(container);
+
+				rodsCon = new createjs.Container();
+				stage.addChild(rodsCon);
+
+				createStage();
+
+		       stage.addChild(drawRectangularPrism(385,160,15,150,"ORANGE","10","#FFA500"));
+		        stage.addChild(drawRectangularPrism(400,130,15,135,"DARK BLUE","9","Blue"));
+		        stage.addChild(drawRectangularPrism(415,100,15,120,"YELLOW","8","YELLOW"));
+		        stage.addChild(drawRectangularPrism(430,70,15,105,"BLACK","7","BLACK"));
+		        stage.addChild(drawRectangularPrism(445,40,15,90,"GREEN","6","#cce698"));
+		        stage.addChild(drawRectangularPrism(210,160,15,75,"RED","5","RED"));
+		        stage.addChild(drawRectangularPrism(225,130,15,60,"MEDIUM YELLOW","4","#fff68f"));
+		        stage.addChild(drawRectangularPrism(240,100,15,45,"LIGHT BLUE","3","#a6ccff"));
+		        stage.addChild(drawRectangularPrism(255,70,15,30,"PALE YELLOW","2","#fff68f"));
+		        stage.addChild(drawRectangularPrism(270,40,15,15,"WHITE","1","WHITE"));
+
+		        for (var i = 1; i < 11; i++) {
+		        	window["rod" + i] = new Image();
+		        	window["rod" + i].src = "../images/rod"+i+".png";
+		        	window["rod" + i].onload = window["handleImageLoad"+i];
+		        }
+				inRodA = getParameterByName("rodA");
+				console.log("RoadA :: " + inRodA);
+				if (inRodA != null && inRodA != "") {
+					rodA = inRodA
+					window["rodA"] = new Image();
+		        	window["rodA"].src = "../images/rod"+inRodA+".png";
+		        	window["rodA"].onload = window["handleRodALoad"];
+				}
+				inRodB = getParameterByName("rodB");
+				console.log("RoadB :: " + inRodB);
+				if (inRodB != null && inRodB != "") {
+					rodB = inRodB
+					window["rodB"] = new Image();
+		        	window["rodB"].src = "../images/rod"+inRodB+".png";
+		        	window["rodB"].onload = window["handleRodBLoad"];
+				}
+		       createTransparentHotSpot(150,35);
+		        createTransparentHotSpotText(80,20);
+
+				createjs.Ticker.setFPS(20);
+				createjs.Ticker.addEventListener("tick", stage);
+				//display middle number text
+				mainNumTxt = new createjs.Text(currentNum, "40px Arial","#000000");//(arr[0].a + " + " + arr[0].b)
+				mainNumTxt.textAlign="center";
+				mainNumTxt.x = 240;
+				mainNumTxt.y = 235;
+				stage.addChild(mainNumTxt);
+
+				//display score
+				scoreTxt = new createjs.Text("Score : " + score, "15px Arial", "#000000");
+		        scoreTxt.x = 510;
+		        scoreTxt.y = 170;
+		        stage.addChild(scoreTxt);
+
+				//next button
+				nextBtn = new createjs.Container();
+				var graphics = new createjs.Graphics();
+				graphics.beginFill("#ffffff" );
+				graphics.setStrokeStyle(1).beginStroke("#000000").drawRect(0, 0, 84, 20);
+				var shape = new createjs.Shape(graphics);
+				nextBtn.addChild(shape);
+
+				var title = new createjs.Text("Next", "17px Arial","#000000");//(arr[0].a + " + " + arr[0].b)
+				title.textAlign="center";
+				title.x = 40;
+				title.y = 1.5;
+				nextBtn.addChild(title);
+				nextBtn.addEventListener("click",onNextBtnClick);
+
+				nextBtn.x = 492;
+				nextBtn.y = 326;
+				nextBtn.cursor = "pointer";
+				stage.addChild(nextBtn);
+				nextBtn.visible = false;
+				num.shuffle();
+				console.log("shuffle array :: " + num);
+				setNumberScreen(); // display first renadom number screen
+				//gameOver();
+			}
+			Array.prototype.shuffle = function() {
+				var input = this;
+
+				for (var i = input.length-1; i >=0; i--) {
+
+					var randomIndex = Math.floor(Math.random()*(i+1));
+					var itemAtIndex = input[randomIndex];
+
+					input[randomIndex] = input[i];
+					input[i] = itemAtIndex;
+				}
+				return input;
+			}
+			function loadSound () {
+  createjs.Sound.registerSound("audio/1.mp3", soundID);
+}
+function playSound () {
+  createjs.Sound.play(soundID);
+}
+			function setNumberScreen(){
+				currentNum = num[numInd];
+				mainNumTxt.text = currentNum;
+				nextBtn.visible = false;
+				switch(currentNum){
+					case 9:
+						setPosibility(arr9,"0000FF");//9
+					break;
+					case 8:
+						setPosibility(arr8,"D2691E");//8
+					break;
+					case 7:
+						setPosibility(arr7,'000000');//7
+					break;
+					case 6:
+						setPosibility(arr6,'006440');//6
+					break;
+					case 5:
+						setPosibility(arr5,'fff200');//5
+					break;
+					case 4:
+						setPosibility(arr4,'FF00FF');//4
+					break;
+					case 3:
+						setPosibility(arr3,'14FF14');//3
+					break;
+					case 2:
+						setPosibility(arr2,'ED1C24');//2
+					break;
+				}
+			}
+			function gameOver(){
+				var graphics = new createjs.Graphics();
+				graphics.beginFill("#FF08DC" );
+				graphics.setStrokeStyle(1).beginStroke("#000000").drawRect(10, 170, 570, 180);
+				var shape = new createjs.Shape(graphics);
+				stage.addChild(shape);
+
+				var t = new createjs.Text("Game Over", "22px Arial","#000000");//(arr[0].a + " + " + arr[0].b)
+				t.textAlign="center";
+				t.x = 290;
+				t.y = 230;
+				stage.addChild(t);
+
+				var t = new createjs.Text("Score :: " + score, "22px Arial","#000000");//(arr[0].a + " + " + arr[0].b)
+				t.textAlign="center";
+				t.x = 290;
+				t.y = 270;
+				stage.addChild(t);
+			}
+			function onNextBtnClick(){
+				loadSound();
+				playSound();
+				console.log("onNextBtnClick");
+				rodsCon.removeAllChildren();
+				for(var i = 0;i<stageBitmapArr.length;i++){
+					if(stageBitmapArr[i])
+					{
+						console.log("bitmap text");
+						stage.removeChild(stageBitmapArr[i]);
+						stageBitmapArr[i] = null;
+					}
+				}
+				stageBitmapArr = [];
+				if(rodsCon){
+					stage.removeChild(rodsCon);
+					rodsCon = null;
+				}
+				rodsCon = new createjs.Container();
+				stage.addChild(rodsCon);
+
+				if(numInd < (num.length-1)){
+					numInd++;
+					setNumberScreen();
+				}
+				else{
+					gameOver();
+				}
+			}
+			function setPosibility(arr,clr){
+				console.log("arrr :: " + clr);
+
+				// set box on each screen so that kids can get idea to play
+				var tt = arr.length + 1;
+				if(arr.length >= 1){
+					setBorderBox(25, 185, 15*arr[0].a, 15);
+					setBorderBox(25 + (15*arr[0].a), 185, 15*arr[0].b, 15);
+
+					t1 = new createjs.Text("", "17px Arial","#000000");//(arr[0].a + " + " + arr[0].b)
+					t1.textAlign="center";
+					t1.x = 25 + (15*tt) + 38;
+					t1.y = 185;
+					rodsCon.addChild(t1);
+					setBorderBox(25, (185+1*15), 15*tt, 15,clr);
+				}
+				if(arr.length >= 2){
+
+					setBorderBox(25, (185+2*15), 15*arr[1].a, 15);
+					setBorderBox(25 + (15*arr[1].a), (185+2*15), 15*arr[1].b, 15);
+
+					t2 = new createjs.Text("", "17px Arial","#000000");//(arr[1].a + " + " + arr[1].b)
+					t2.textAlign="center";
+					t2.x = 25 + (15*tt) + 38;
+					t2.y = 215;
+					rodsCon.addChild(t2);
+				}
+
+				if(arr.length >= 3){
+					setBorderBox(25, 185 + 6 * 15, 15*arr[2].a, 15);
+					setBorderBox(25 + (15*arr[2].a), 185 + 6 * 15, 15*arr[2].b, 15);
+					t3 = new createjs.Text("", "17px Arial","#000000");//arr[2].a + " + " + arr[2].b
+					t3.textAlign="center";
+					t3.x = 25 + (15*tt) + 38;
+					t3.y = 275;
+					rodsCon.addChild(t3);
+					setBorderBox(25, 185 + 7 * 15, 15*tt, 15,clr);
+				}
+
+				if(arr.length >= 4){
+
+
+					setBorderBox(25, 185 + 8 * 15, 15*arr[3].a, 15);
+					setBorderBox(25 + (15*arr[3].a), 185 + 8 * 15, 15*arr[3].b, 15);
+
+					t4 = new createjs.Text("", "17px Arial","#000000");//arr[3].a + " + " + arr[3].b
+					t4.textAlign="center";
+					t4.x = 25 + (15*tt) + 38;
+					t4.y = 305;
+					rodsCon.addChild(t4);
+				}
+				if(arr.length >= 5){
+					setBorderBox(325, 185, 15*arr[4].a, 15);
+					setBorderBox(325 + (15*arr[4].a), 185, 15*arr[4].b, 15);
+
+					t5 = new createjs.Text("", "17px Arial","#000000");//arr[4].a + " + " + arr[4].b
+					t5.textAlign="center";
+					t5.x = 325 + (15*tt) + 38;
+					t5.y = 185;
+					rodsCon.addChild(t5);
+					setBorderBox(325, (185+1*15), 15*tt, 15,clr);
+				}
+				if(arr.length >= 6){
+
+					setBorderBox(325, (185+2*15), 15*arr[5].a, 15);
+					setBorderBox(325 + (15*arr[5].a), (185+2*15), 15*arr[5].b, 15);
+
+
+
+					t6 = new createjs.Text("", "17px Arial","#000000");//arr[5].a + " + " + arr[5].b
+					t6.textAlign="center";
+					t6.x = 325 + (15*tt) + 38;
+					t6.y = 215;
+					rodsCon.addChild(t6);
+				}
+				if(arr.length >= 7){
+					setBorderBox(325, 185 + 6 * 15, 15*arr[6].a, 15);
+					setBorderBox(325 + (15*arr[6].a), 185 + 6 * 15, 15*arr[6].b, 15);
+					t7 = new createjs.Text("", "17px Arial","#000000");//arr[6].a + " + " + arr[6].b
+					t7.textAlign="center";
+					t7.x = 325 + (15*tt) + 38;
+					t7.y = 275;
+					rodsCon.addChild(t7);
+					setBorderBox(325, 185 + 7 * 15, 15*tt, 15,clr);
+				}
+
+				if(arr.length >= 8){
+
+					setBorderBox(325, 185 + 8 * 15, 15*arr[7].a, 15);
+					setBorderBox(325 + (15*arr[7].a), 185 + 8 * 15, 15*arr[7].b, 15);
+
+					t8 = new createjs.Text( "", "17px Arial","#000000");//arr[7].a + " + " + arr[7].b
+					t8.textAlign="center";
+					t8.x = 325 + (15*tt) + 38;
+					t8.y = 305;
+					rodsCon.addChild(t8);
+				}
+			}
+
+			function setBorderBox(xp,yp,ww,hh,clr){
+				var graphics = new createjs.Graphics();
+				if(clr)
+					graphics.beginFill("#" + clr);
+				graphics.setStrokeStyle(1).beginStroke("#000000").drawRect(xp, yp, ww, hh);
+				var shape = new createjs.Shape(graphics);
+		        rodsCon.addChild(shape);
+
+
+				//  for (var i = 0; i < 11; i++)
+		        //	graphics.mt(10,185+i*15).lt(580,185+i*15);
+		       // for (var i = 0; i < 37; i++)
+		       // 	graphics.mt(25+i*15,170).lt(25+i*15,350);
+			}
+			function resize() {
+				var canvas = document.querySelector('canvas');
+				var ctx = canvas.getContext('2d');
+
+				// Our canvas must cover full height of screen
+				// regardless of the resolution
+				console.log("resizing");
+				var height = window.innerHeight*.95;
+
+				// So we need to calculate the proper scaled width
+				// that should work well with every resolution
+				var ratio = canvas.width/canvas.height;
+				var width = height * ratio;
+
+				canvas.style.width = width+'px';
+				canvas.style.height = height+'px';
+			}
+			function handleRodALoad(event) {
+				var bitmap = new createjs.Bitmap(event.target);
+				bitmap.x = 265;
+				bitmap.y = 10;
+				bitmap.index = -1;
+				bitmap.width = rodA*15;
+				stage.addChild(bitmap);
+			}
+			function handleRodBLoad(event) {
+				var bitmap = new createjs.Bitmap(event.target);
+				bitmap.x = 265 + inRodA*15;
+				bitmap.y = 10;
+				bitmap.index = -1;
+				bitmap.width = rodB*15;
+				stage.addChild(bitmap);
+			}
+			function stop() {
+				createjs.Ticker.removeEventListener("tick", tick);
+			}
+
+			function handleImageLoad10(event) { handleImageLoad(event.target,385,145,150,10);}
+			function handleImageLoad9(event) { handleImageLoad(event.target,400,115,135,9);}
+			function handleImageLoad8(event) { handleImageLoad(event.target,415,85,120,8);}
+			function handleImageLoad7(event) { handleImageLoad(event.target,430,55,105,7);}
+			function handleImageLoad6(event) { handleImageLoad(event.target,445,25,90,6);}
+			function handleImageLoad5(event) { handleImageLoad(event.target,210,145,75,5);}
+			function handleImageLoad4(event) { handleImageLoad(event.target,225,115,60,4);}
+			function handleImageLoad3(event) { handleImageLoad(event.target,240,85,45,3);}
+			function handleImageLoad2(event) { handleImageLoad(event.target,255,55,30,2);}
+			function handleImageLoad1(event) { handleImageLoad(event.target,270,25,15,1);}
+
+		    function handleImageLoad(image,xloc,yloc,width,val) {
+		    	var rodWidth = width/15;
+				var dataVal = val;
+				//console.log("box val :: " + val + " :: " + val);
+		//    	console.log("Adding rods of width " + rodWidth);
+		    	for (var i = 0; i < inRods.length; i++) {
+		    		var nextItem = inRods[i];
+		    		console.log(nextItem);
+					var details = nextItem.split(",");
+					console.log(details);
+					var length = parseInt(details[2])+1;
+					var row = parseInt(details[1]);
+					var col = parseInt(details[0]);
+					var dir = parseInt(details[3]);
+					console.log(length + "," + width);
+		    		if (length*15 == width) {
+		    			console.log("Adding rod");
+		    			handleImageLoadDetails(dataVal,image,col*15-5,155+row*15,length*15,dir);
+					}
+				}
+				handleImageLoadDetails(dataVal,image,xloc,yloc,width,0);
+			}
+			function onAnimComplete(){
+				console.log("onAnimComplete  len :: " + currObj.Srow);
+				if(currObj.Srow){
+					var flg = false;
+
+					var arr = this["arr" + currentNum];
+					console.log("arr :: " + arr);
+					for(var i = 0;i<(currentNum-1);i++){
+						var r = begStartGridArr[i].r;
+						var c = begStartGridArr[i].c;
+						//console.log("ccc :: " + c + " :: " + (c+(currentNum - 1)));
+						//console.log("chk :: " + currObj.Scol + " :: " + currObj.Ecol);
+						if((currObj.Srow == r && (currObj.Scol >= c && currObj.Scol <= (c+(currentNum - 1)))) && (currObj.Erow == r && (currObj.Ecol <= (c+(currentNum))))){
+							if(arr[i].a == (currObj.Ecol - currObj.Scol) || arr[i].b == (currObj.Ecol - currObj.Scol)){
+								var obj1 = new Object();
+								obj1.r = begStartGridArr[i].r;
+								obj1.c = begStartGridArr[i].c;
+								obj1.l = arr[i].a;
+								obj1.flg = arr[i].f1;
+
+								var obj2 = new Object();
+								obj2.r = begStartGridArr[i].r;
+								obj2.c = begStartGridArr[i].c + arr[i].a;
+								obj2.l = arr[i].b;
+								obj2.flg = arr[i].f2;
+
+								var currObjLen = (currObj.Ecol - currObj.Scol);
+								var currObjRow = currObj.Srow;
+								var currObjCol = currObj.Scol;
+
+								console.log("correct matches.... :: " + (currObjRow + "," + currObjCol + " :: " + currObjLen) + " || " + (obj1.r + "," + obj1.c + " :: " + obj1.l) + " || " + (obj2.r + "," + obj2.c + " :: " + obj2.l));
+								if((currObjLen == obj1.l && currObjRow == obj1.r && currObjCol == obj1.c && obj1.flg == false) || (currObjLen == obj2.l && currObjRow == obj2.r && currObjCol == obj2.c && obj2.flg == false)){
+									stageBitmapArr.push(currObj.bitmap);
+									if(currObjLen == obj1.l && currObjRow == obj1.r && currObjCol == obj1.c && obj1.flg == false){
+										arr[i].f1 = true;
+										this["t" + (i + 1)].text = arr[i].a + " + ";
+									}
+									if(currObjLen == obj2.l && currObjRow == obj2.r && currObjCol == obj2.c && obj2.flg == false){
+										arr[i].f2 = true;
+										this["t" + (i + 1)].text = " + " +  arr[i].b;
+									}
+									if(arr[i].f1 == true && arr[i].f2 == true){
+										this["t" + (i + 1)].text = arr[i].a + " + " +  arr[i].b;
+										score++;
+										scoreTxt.text = "Score : " + score;
+
+
+
+										//var arr = this["arr" + currentNum];
+										var flg = true;
+										for(var i = 0;i<arr.length;i++){
+											if(arr[i].f1 == false || arr[i].f2 == false){
+												flg = false;
+												break;
+											}
+										}
+
+										nextBtn.visible = flg;
+									}
+									currObj.bitmap.removeAllEventListeners();
+									flg = true;
+									break;
+								}
+							}
+						}
+					}
+					if(flg == false){
+						console.log("Incorrect matches....");
+						deleteRod(currObj.bitmap);
+					}
+				}
+			}
+		    function handleImageLoadDetails(dataVal,image,xloc,yloc,width,dir) {
+		//    	var image = rod150;
+		    	var bitmap = new createjs.Bitmap(image);
+				bitmap.x = xloc;
+				bitmap.y = yloc + bitmap.image.height;
+				bitmap.val = dataVal;
+				if (yloc >= 170) {
+					bitmap.row = (yloc+150)/15;
+					bitmap.col = (xloc-15)/15;
+					console.log(bitmap.col + "," + bitmap.row);
+					bitmap.index = rodCount;
+					rodCount++;
+					rods.push(bitmap);
+				} else
+					bitmap.index = -1;
+				bitmap.width = width;
+				if (dir == 1) {
+					bitmap.rotated = true;
+					bitmap.y -= 15;
+					bitmap.rotation = 90;
+				} else
+					bitmap.rotated = false;
+				bitmap.units = width/15;
+		//		bitmap.regX = bitmap.image.width / 2;
+				bitmap.regY = bitmap.image.height;
+		//		bitmap.scaleX = bitmap.scaleY = bitmap.scale = Math.random() * 0.4 + 0.6;
+				bitmap.name = "bmp_" + yloc;
+				bitmap.cursor = "pointer";
+
+				bitmap.on("mousedown", function (evt) {
+					downTime = new Date().getTime();
+					bitmap.oldX = bitmap.x;
+					bitmap.oldY = bitmap.y;
+					this.parent.addChild(this);
+					this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
+				});
+
+				bitmap.on("click", function (evt) {
+
+					//console.log(" val :: " + evt.currentTarget.val);
+					//if(evt.currentTarget.val == 7)
+					//	rodsCon.visible = false;
+					loadSound();
+					playSound();
+					if (Math.abs(bitmap.oldX - bitmap.x) > 2 || Math.abs(bitmap.oldY - bitmap.y) > 2) {
+						clickCount = 0;
+						return;
+					}
+
+					if (bitmap.y >= 170) {
+						var now = new Date().getTime();
+						var timesince = now - downTime;
+						if (timesince > 600) {
+		//					console.log("to slow for click");
+							clickCount = 0;
+							return;
+						} else {
+							if (clickCount == 0)
+								firstClickTime = now;
+							clickCount++;
+							timesince = now;
+						}
+						if (clickCount == 2) {
+							clickCount = 0;
+							return;
+							now = new Date().getTime();
+							timesince = now-firstClickTime;
+							if (timesince > 600) {
+		//						console.log("to slow for double click");
+								return;
+							}
+							if (bitmap.width == 15)
+								return;
+
+							if (bitmap.y >= 170) {
+								if (bitmap.rotated == true && bitmap.x + bitmap.width < maxX) {
+									bitmap.rotation = 0;
+									bitmap.rotated = false;
+									bitmap.row--;
+				//					bitmap.col--;
+									currentCol = bitmap.col + bitmap.width/15;
+									currentRow = bitmap.row;
+								} else if (bitmap.y + bitmap.width < 350){
+									bitmap.rotation = 90;
+									bitmap.rotated = true;
+				//					bitmap.row--;
+									bitmap.row++;
+									currentCol = bitmap.col+1;
+									currentRow = bitmap.row;
+								}
+							}
+						}
+					} else if (bitmap.y < 170) {
+						bitmap.row = currentRow;
+						bitmap.col = currentCol;
+						var newX = 10+(currentCol-1)*15;
+						var newY = 170+(currentRow)*15;
+						currentCol = currentCol + bitmap.width/15;
+						console.log(bitmap.col + "," + bitmap.row);
+						console.log(currentCol + "," + currentRow);
+						currObj = new Object();
+						currObj.bitmap = bitmap;
+						currObj.Scol = bitmap.col;
+						currObj.Srow = bitmap.row;
+						currObj.Ecol = currentCol;
+						currObj.Erow = currentRow;
+
+						console.log("info :: " + bitmap.row +" :: " + bitmap.col );
+						if (newX + bitmap.width < 580) {
+								createjs.Tween.get(bitmap, {loop: false}, null, false) // get a new tween targeting circle
+								.to({x: newX, y: newY,alpha:currentAlpha}, 1000, createjs.Ease.get(1)).call(onAnimComplete);// tween x/y/alpha properties over 1s (1000ms) with ease out
+							bitmap.index = rodCount;
+							rodCount++;
+							rods.push(bitmap);
+							handleImageLoad(image,xloc,yloc,width);
+
+							//console.log("info :: " + rodCount +" :: " + bitmap.index );
+						}
+					}
+					getOut();
+				});
+				bitmap.on("pressup", function (evt) {
+					//console.log("pos :: " + bitmap.x + " :: " + bitmap.y);
+					loadSound();
+					playSound();
+					update = true;
+					if (Math.abs(bitmap.oldX - bitmap.x) < 2 && Math.abs(bitmap.oldY - bitmap.y) < 2)
+						return;
+
+					var maxX = 580;
+					if (bitmap.rotated)
+						maxX = 820;
+
+					if (bitmap.x < 10 || bitmap.x + bitmap.width > maxX || bitmap.y < 180 || bitmap.y > 350) {
+						if (bitmap.index != -1) {
+							rods.splice(bitmap.index,1);
+							deleteRod(bitmap);
+						}
+						else {
+							createjs.Tween.get(bitmap, {loop: false}, null, false) // get a new tween targeting circle
+							.to({x: xloc, y: yloc+15}, 1000, createjs.Ease.get(1)); // tween x/y/alpha properties over 1s (1000ms) with ease out
+						}
+					} else {
+						var x = Math.round((bitmap.x - 10)/15)+1;
+						var y = Math.round((bitmap.y - 170)/15);
+						bitmap.col = x;
+						bitmap.row = y;
+						if (bitmap.rotated)
+							bitmap.row = y+1;
+		//				console.log(x + "," + y);
+						bitmap.x = 10+(x-1)*15;
+						bitmap.y = 170+(y)*15;
+						if (bitmap.rotated){
+							currentCol = x+1;
+							currentRol = y+1;
+						}
+						else {
+							currentCol = x +  bitmap.width/15;
+							currentRow = y;
+						}
+						console.log(bitmap.row + "," + bitmap.col);
+						console.log(currentRow + "," + currentCol);
+						if (bitmap.index == -1) {
+							bitmap.alpha = currentAlpha;
+							bitmap.index = rodCount;
+							rodCount++;
+							rods.push(bitmap);
+							handleImageLoad(image,xloc,yloc,width);
+						}
+					}
+
+					currObj = new Object();
+					currObj.bitmap = bitmap;
+					currObj.Scol = bitmap.col;
+					currObj.Srow = bitmap.row;
+					currObj.Ecol = currentCol;
+					currObj.Erow = currentRow;
+					getOut();
+					onAnimComplete();
+				});
+
+
+				// the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
+				bitmap.on("pressmove", function (evt) {
+					loadSound();
+					playSound();
+					this.x = evt.stageX + this.offset.x;
+					this.y = evt.stageY + this.offset.y;
+					// indicate that the stage should be updated on the next tick:
+					update = true;
+				});
+				stage.addChild(bitmap);
+				//rodsCon.addChild(bitmap);
+			}
+
+			function drawRectangularPrism(xloc,yloc,height,width,colorText,number,color) {
+				var container = new createjs.Container();
+				var shift = Math.floor(height/3);
+		//				var s = new createjs.Shape();
+		//		s.graphics.setStrokeStyle(16, "round", "round").beginStroke("#f90").moveTo(20, 10).lineTo(90, 90).lineTo(90, 140);
+		//		container.addChild(s);
+				var bg = new createjs.Shape();
+				bg.graphics.mt(xloc,yloc);
+				bg.graphics.beginFill(color).lt(xloc,yloc-height);
+				bg.graphics.lt(xloc+shift,yloc-height-shift);
+				bg.graphics.lt(xloc+shift+width,yloc-height-shift);
+				bg.graphics.lt(xloc+shift+width,yloc-shift);
+				bg.graphics.lt(xloc+width,yloc);
+				bg.graphics.lt(xloc,yloc).endFill();
+				bg.graphics.setStrokeStyle(1).beginStroke("#000000");
+				bg.graphics.mt(xloc,yloc);
+				bg.graphics.lt(xloc,yloc-height).lt(xloc+width,yloc-height);
+				bg.graphics.lt(xloc+width,yloc).lt(xloc,yloc);
+				bg.graphics.mt(xloc,yloc-height).lt(xloc+shift,yloc-height-shift);
+				bg.graphics.lt(xloc+shift+width,yloc-height-shift);
+				bg.graphics.lt(xloc+shift+width,yloc-shift);
+				bg.graphics.lt(xloc+width,yloc);
+				bg.graphics.mt(xloc+width,yloc-height).lt(xloc+width+shift,yloc-height-shift);
+		//		bg.graphics.beginFill(color).drawRect(xloc, yloc, width, height).endFill();
+				//bg.alpha = 0.25;
+				container.addChild(bg);
+				var text = new createjs.Text(colorText, "12px Arial","#000000");
+				text.textAlign="right";
+		        text.x = xloc-10;
+		        text.y = yloc-3;
+		        text.textBaseline = "alphabetic";
+		        container.addChild(text);
+
+				var number = new createjs.Text(number, "12px Arial","#000000");
+						number.textAlign="right";
+				    number.x = xloc+width+22;
+				    number.y = yloc-10;
+				    number.textBaseline = "alphabetic";
+				    container.addChild(number);
+				return container;
+			}
+
+			function createStage() {
+				var resetImage = new Image();
+				var trashCanImage = new Image();
+				trashCanImage.src = "../images/TrashCan.JPG";
+				trashCanImage.onload=handleTrashCanLoad;
+				resetImage.src = "../images/resetButton.png";
+				resetImage.onload = handleResetButtonLoad;
+				var graphics = new createjs.Graphics();
+				graphics.setStrokeStyle(1).beginStroke("#D3D3D3").drawRect(5, 5, 580, 350);
+				graphics.setStrokeStyle(1).beginStroke("#D3D3D3").drawRect(10, 10, 570, 155);
+				graphics.setStrokeStyle(1).beginStroke("#D3D3D3").beginFill("#FFF8DC").drawRect(10, 170, 570, 180);
+		        graphics.alpha=0.25;
+		        for (var i = 0; i < 11; i++)
+		        	graphics.mt(10,185+i*15).lt(580,185+i*15);
+		        for (var i = 0; i < 37; i++)
+		        	graphics.mt(25+i*15,170).lt(25+i*15,350);
+
+				var shape = new createjs.Shape(graphics);
+		        container.addChild(shape);
+			}
+			function handleTrashCanLoad(event) {
+				var image = event.target;
+				var bitmap = new createjs.Bitmap(image);
+				container.addChild(bitmap);
+				bitmap.regX = bitmap.image.width / 2 | 0;
+				bitmap.regY = bitmap.image.height / 2 | 0;
+				bitmap.scaleX = bitmap.scaleY = bitmap.scale = 1;
+				bitmap.name = "bmp_resetButton";
+				bitmap.cursor = "pointer";
+				this.scaleX = this.scaleY = this.scale;
+
+				bitmap.x = 50;
+				bitmap.y = 45;
+				this.scaleX = this.scaleY = this.scale;
+				bitmap.on("rollover", function (evt) {
+					this.scaleX = this.scaleY = this.scale * 1.2;
+					update = true;
+				});
+			}
+			function handleResetButtonLoad(event) {
+
+				var image = event.target;
+				var bitmap = new createjs.Bitmap(image);
+				container.addChild(bitmap);
+				var text = new createjs.Text("Start Over", "12px Arial", "#000000");
+		        text.x = 20;
+		        text.y = 150;
+		        text.textBaseline = "alphabetic";
+		        container.addChild(text);
+				bitmap.regX = bitmap.image.width / 2 | 0;
+				bitmap.regY = bitmap.image.height / 2 | 0;
+				bitmap.scaleX = bitmap.scaleY = bitmap.scale = 1;
+				bitmap.name = "bmp_resetButton";
+				bitmap.cursor = "pointer";
+				this.scaleX = this.scaleY = this.scale;
+				bitmap.x = 50;
+				bitmap.y = 110
+				bitmap.on("click",function (evt) {
+					loadSound();
+					playSound();
+		//			for (var i = 0; i < rodCount;i++) {
+					while (rods.length > 0) {
+						deleteRod(rods.pop());
+					}
+					rodCount = 0;
+					currentRow = 2;
+					currentCol = 2;
+					getOut();
+
+				 });
+				bitmap.on("rollover", function (evt) {
+					this.scaleX = this.scaleY = this.scale * 1.2;
+					update = true;
+				});
+
+				bitmap.on("rollout", function (evt) {
+					this.scaleX = this.scaleY = this.scale;
+					update = true;
+				});
+			}
+			function deleteRod(bitmap) {
+				createjs.Tween.get(bitmap)
+				.to({alpha:0, visible:false}, 500);
+			}
+			function tick(event) {
+				// this set makes it so the stage only re-renders when an event handler indicates a change has happened.
+				if (update) {
+					update = false; // only update once
+					stage.update(event);		}
+			}
+
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		function getOut() {
+			var outtxt = "";
+			var cell = 0;
+			var dir = 0;
+			for (var i = 0; i < rods.length; i++) {
+				dir = (rods[i].rotated ? 1 : 0);
+				cell = rods[i].col + "," + rods[i].row + "," + (rods[i].units-1) + "," + dir;
+				outtxt += ":"+cell;
+			}
+			if (qn != null) {
+				parent.postMessage(qn+":"+outtxt,'*');
+				//console.log(qn+":"+outtxt);
+			}
+
+		}
+		function setLayer(layer){
+			var check = "&#10004;";
+			if (currentAlpha == .4) {
+
+				currentAlpha = 1;
+				document.getElementById("layerOne").innerHTML = "&nbsp;";
+			} else {
+				currentAlpha = .4;
+
+				document.getElementById("layerOne").innerHTML = "&#10004;";
+			}
+		}
+
+			function createTransparentHotSpotText(xloc,yloc,label) {
+				var hsText = new createjs.Text("Add Transparent Pieces", "12px Arial", "#000000");
+		        hsText.x = xloc;
+		        hsText.y = yloc;
+		        hsText.textBaseline = "alphabetic";
+		        stage.addChild(hsText);
+		    }
+
+			function createTransparentHotSpot(xloc,yloc) {
+				var hs = new createjs.Container();
+				var dot = new createjs.Shape();
+				var radius = 10;
+				dot.graphics.beginFill("#0000FF").setStrokeStyle(2);
+				dot.graphics.drawCircle(5, 5, 10).endFill();
+				hs.addChild(dot);
+		//		hs.regX = xloc+5;
+		//		hs.regY = yloc+5;
+		//		hs.selected = false;
+				hs.x = xloc;
+				hs.y = yloc;
+				hs.alpha = .2;
+				this.scaleX = this.scaleY = this.scale;
+				hs.cursor = "pointer";
+				hs.on("rollover", function (evt) {
+						console.log("roll over");
+		//			this.scaleX = this.scaleY = this.scale * 1.2;
+					update = true;
+				});
+				hs.on("rollout", function (evt) {
+						console.log("rollOut");
+		//			this.scaleX = this.scaleY = this.scale;
+					update = true;
+				});
+				hs.on("click", function (evt) {
+						console.log("click");
+						loadSound();
+						playSound();
+					if (currentAlpha == .4) {
+						currentAlpha = 1;
+						this.alpha = .2;
+					} else {
+						currentAlpha = .4;
+						this.alpha = 1;
+					}
+				});
+				stage.addChild(hs);
+			}
+		</script>
+</head>
+
+<body onload="init();">
+<div id="main-toolbar" class="toolbar">
+  <button class="toolbutton" id="activity-button" title="My Activity"></button>
+
+  <!-- Add more buttons here -->
+
+  <!-- Buttons with class="pull-right" will be right aligned -->
+  <button class="toolbutton pull-right" id="stop-button" title="Stop"></button>
+</div>
+
+<!-- The content of your activity goes inside the canvas -->
+<div>
+<div style="position:relative">
+  <div style="position:absolute;top:0px;left:0px">
+  	<canvas id="testCanvas" width="600" height="370"></canvas>
+  	</div>
+
+</div>
+
+</div>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-# Google Summer of Code 2018 Project: Primero Documentation
+# Google Summer of Code 2018 Project: Primero1° Documentation
 
 ## Table of Contents
 
@@ -12,13 +12,13 @@
 
 5. Design Layout of Website/Project
 
-6. Addendum for ios App
+6. Addendum for iOS App
 
 7. Credits
 
 ## Basic Information
 
-* Project Name - **Primero1 (Sugarizer Primero)**.
+* Project Name - **Primero1° (Sugarizer Primero1°)**.
 
 * Organisation - **Sugar Labs**.
 
@@ -32,59 +32,48 @@
 
 ### Introduction
 
-This repository contains the code for the primero version of sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSOC 2018 project **Primero1** under the organization **Sugar Labs**. The changes made during the **GSOC** period can be viewed at [https://github.com/iqraceme/Primero1/]. The repository of the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during **GSOC** was done in the repository [https://github.com/iqraceme/Primero1/]. A live preview of the website is hosted using can be viewed at [http://iqragsoc.com/iqragsoc.com/primero/]. 
+This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/Primero/].
 
-The Primero android beta testing version is available at:
+The Primero1° Android beta testing version is available at:
 
-[https://play.google.com/apps/testing/com.sugars.primero1](https://play.google.com/apps/testing/com.sugars.primero1)
+https://play.google.com/apps/testing/com.sugars.Primero1
 
-The Primero amazon kindle testing version can be emailed upon request.
+A link for the Primero1° Amazon Kindle testing version can be emailed upon request.
 
 **_Repositories:_**
 
-1. The main repository where I worked on during the development of the project is [https://github.com/iqraceme/Primero1](https://github.com/iqraceme/Primero1). However, this is not the forked version of the [original website’s repository](https://github.com/sugarlabs/sugarizer).
+1. The main repository where I worked on during the development of the project is https://github.com/iqraceme/Primero1. However, this is not the forked version of the original website’s repository.
 
-2. I have added my project as a branch to the repo of the [original website’s repository](https://github.com/sugarlabs/sugarizer): [https://github.com/iqraceme/Primero/tree/iqraceme/primero](https://github.com/iqraceme/Primero/tree/iqraceme/primero)
+2.I have added my project as a branch to the repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/Primero
 
-3. You can check the android repo on: [https://github.com/iqraceme/Primero-Android-](https://github.com/iqraceme/Primero-Android-)
+3.You can check the android repo on: https://github.com/iqraceme/Primero-Android-
 
 **_Commits:_**
 
-1. You can see all my commits at the link – [https://github.com/iqraceme/Primero1/commits/master](https://github.com/iqraceme/Primero1/commits/master). You can check the timestamps to see the commits related to any particular day.
+1. You can see all my commits at the link – https://github.com/iqraceme/Primero/commits/master. You can check the timestamps to see the commits related to any particular day.
 
 **_Blog Posts:_**
 
-I have written weekly blog reports in which I mentioned the progress I did in that particular week. All the blog posts can be accessed at: [iqragsoc.wordpress.com](http://iqragsoc.wordpress.com)
+I have written weekly blog reports in which I mentioned the progress I did in that particular week. All the blog posts can be accessed at: iqragsoc.wordpress.com
 
-Do check out the code! 
+Do check out the code!
 
 ### Major Services
 
-We have the following major features in Primero1:
+We have the following major features in Primero1°:
 
-1. Primero Animated Loader
-
-2. Animated background in homeview
-
-3. Colored icons of all activities
-
-4. Colors added to specific activities
-
-5. Yellow and Green dropdowns for each activity
-
-6. New Audio based math sticks activity added to primero web version
-
-7. Primero android app
-
-8. Primero Amazon Kindle app
-
-9. Primero web app
-
-10. All the web, android and amazon apps made mobile responsive for all screen sizes.
-
-11. Certain features of some activities removed and adjusted for small children
-
-12. Extensive documentation of the project
+1. Primero1° Animated Loader
+2.Animated background in homeview
+3.Colored icons of all activities
+4.Colors added to specific activities
+5.Yellow and Green dropdowns for each Activity
+6.New Audio based MathStix Activity added to Primero1° web version
+7.Primero1° Android app
+8.Primero1° Amazon Kindle app
+Primero1° web app
+All the web, Android and Amazon apps made mobile responsive for all screen sizes.
+Certain features of some activities removed and adjusted for small children
+Extensive documentation of the project
 
 ### Languages and Technologies
 
@@ -112,41 +101,40 @@ The loader screen is enabled for:
 
 7. Small devices browsers like on Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile
 
-## Steps on how to use the primero app
+## Steps on how to use the Primero1° app
 
-The following video link below explain the steps for non-technical individuals using the Primero App.
+The following video link below explains the steps for non-technical individuals using the Primero1° App.
 
-[https://www.youtube.com/watch?v=bW51n7ifaXs&feature=youtu.be](https://www.youtube.com/watch?v=bW51n7ifaXs&feature=youtu.be)
+https://youtu.be/bW51n7ifaXs
 
-The steps below explain on how to use the Primero App.
+The steps below explain how to use the Primero1° application.
 
-1. Log onto the [http://iqragsoc.com/iqragsoc.com/primero](http://iqragsoc.com/iqragsoc.com/primero) or open the android/kindle app
+1.Log onto the http://iqragsoc.com/iqragsoc.com/Primero or open the android/kindle app
 
-2. You will see a blue Primero loader. 
+2.You will see a blue Primero1° loader.
 
-3. The loader will disappear after a few seconds and it will be redirected to the main page of primero app.
+3.The loader will disappear after a few seconds and it will be redirected to the main page of Primero1° app.
 
-4. You will see icons on the homepage of Primero. Each of these icons lead to an activity.
+4.You will see icons on the homepage of Primero1°. Each of these icons leads to an Activity.
 
-5. You can hover your mouse on any of these icons. On hovering, you will see a green  button. The green button will start a new activity.
+5.You can hover your mouse on any of these icons. On hovering, you will see a green button. The green button will start a new Activity.
 
-6. The first activity in the grid is the maze activity. The maze activity featured on Primero  lets users navigate the smiley face to the end of the maze. The levels become more difficult as game proceeds. If you wish to exit an existing activity, such as this one, simply click on the red button on the upper right hand side of the screen – you will be immediately taken to the home screen of the application.
+6.The first Activity in the grid is the Maze Activity. The Maze Activity, featured in Primero1°, lets users navigate the smiley face to the end of the maze. The levels become more difficult as game proceeds. If you wish to exit an existing Activity, such as this one, simply click on the red button on the upper right hand side of the screen – you will be immediately taken to the home screen of the application.
 
-7. The activity next to maze icon is the paint activity. The paint activity in Primero can be used to create artistic pieces using the draw, fill and color features. If you wish to resume your last session of the activity, click on the red button to return to the home screen. When you wish to resume your session, hover your cursor over the desired logo and click on the yellow circle. This will allow you to resume your activity where you left off.
+7.The Activity next to the Maze icon is the Paint Activity. The Paint Activity in Primero1° can be used to create artistic pieces using the draw, fill, and color features. If you wish to resume your last session of the Activity, click on the red button to return to the home screen. When you wish to resume your session, hover your cursor over the desired logo and click on the yellow circle. This will allow you to resume your Activity where you left off.
 
-8. Move your cursor to the third activity icon.The third activity featured in Primero is the Tamtam microactivity. It can be used to learn about different sound-picture associations. To select a sound category, click on the pink button of your choice. To listen to a sound clip, simply click on the desired purple button.
+8.Move your cursor to the third Activity icon.The third Activity featured in Primero1° is the TamTam MicroActivity. It can be used to learn about different sound-picture associations. To select a sound category, click on the pink button of your choice. To listen to a sound clip, simply click on the desired purple button.
 
-9. Let us now look at the Reflection activity. You can find it by moving your cursor to the fourth activity icon. The end goal is to edit the colours of all circles on both sides of the game until they are completely symmetrical. Select the reflection activity from the black bar found on the top of the application page. To change the colour of any circle, simply click until your desired colour.
+9.Let us now look at the Reflection Activity. You can find it by moving your cursor to the fourth Activity icon. The end goal is to edit the colors of all circles on both sides of the game until they are completely symmetrical. Select the reflection Activity from the black bar found on the top of the application page. To change the color of any circle, simply click until your desired color.
 
-10. The next activity icon are purple colored blocks. This is memorize activity. The memorize activity allows users to match identical tiles from the selection provided. To look at a tile, click on it. You can only look at 1 tile from Group 1 or 2 at the same time.
+10.The next Activity icon is made up of purple colored blocks. This is Memorize Activity. The Memorize Activity allows users to find matching tiles from the selection provided. The tiles include things like simple math problems and their answers and capital and lower case letters. To look at a tile, click on it. You can only look at 1 tile from Group 1 or 2 at the same time.
 
-11. The last activity featured on is the clock activity. Users can choose between the simple clock and the nice clock. Users can also choose to display the time and date in digital form if needed.
-
+11.The last Activity featured on is the Clock Activity. Users can choose between the simple clock and the nice clock. Users can also choose to display the time and date in digital form if needed.
 ## Description of Files and Folders
 
 ### Activities Folder:
 
-This folder contains all the Primero activities.
+This folder contains all the Primero1° Activities..
 
 ### API Folder:
 
@@ -188,25 +176,25 @@ This will contain:
 
 **_Few Screenshots:_**
 
-**Screenshot 1:**
+**Screenshot 1: Opening Screen**
 
 ![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/1.png)
 
-**Screenshot 2:**
+**Screenshot 2: Main Screen with Activity Icons**
 
 ![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/PIC-2.JPG)
 
-**Screenshot 3:**
+**Screenshot 3: TamTamMini Shown on an Android smartphone screen**
 
 ![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/pic8.JPG)
 
-**Screenshot 4:**
+**Screenshot 4: The Paint Activity**
 
 ![image alt text](https://github.com/iqraceme/Primero1/blob/master/images/primero.JPG)
 
 ### Code and Contribution
 
-The code has been restructured, unnecessary code has been removed, comments were added wherever required, proper indentation was provided, and simple names were used which makes it a contributor-friendly codebase. So, hope on and contribute now!
+The code has been restructured, unnecessary code has been removed, comments were added wherever required, proper indentation was provided, and simple names were used which makes it a contributor-friendly codebase. So, hop on and contribute now!
 
 ### How to run the code
 
@@ -219,18 +207,15 @@ Clone the repository
 To run Sugarizer Application from the Web Browser (GNU Linux/Mac OS/Windows), you should launch it with a special option to enable access to local files.
 
 For Chrome, close ALL running instances of Chrome and re-launch it using the command line:
-
 chrome --allow-file-access-from-files index.html
 
 On Mac OS, you should launch:
-
 open -n /Applications/Google\ Chrome.app --args --allow-file-access-from-files
 
 For Firefox, type in the address bar:
-
 about:config
 
-## Addendum for ios App
+## Addendum for iOS App
 
 Please follow the following steps for the development of an ios app.
 

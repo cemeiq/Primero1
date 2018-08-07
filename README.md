@@ -2,19 +2,19 @@
 
 ## Table of Contents
 
-1. Basic Information
+1. [Basic Information](https://github.com/iqraceme/Primero1/##basic-information)
 
-2. About the Website/Project
+2. [About the Website/Project](https://github.com/iqraceme/Primero1/##about-the-project)
 
-3. Steps on how to use the Primero1 app
+3. [Steps on how to use the Primero1 app](https://github.com/iqraceme/Primero1/##steps-on-how-to-use-the-primero1° app)
 
-4. Description of Files and Folders
+4. [Description of Files and Folders](https://github.com/iqraceme/Primero1/##description-of-files-and-folders)
 
-5. Design Layout of Website/Project
+5. [Design Layout of Website/Project](https://github.com/iqraceme/Primero1/##design-layout-of-website/project)
 
-6. Addendum for iOS App
+6. [Addendum for iOS App](https://github.com/iqraceme/Primero1/##addendum-for-ios-app)
 
-7. Credits
+7. [Credits](https://github.com/iqraceme/Primero1/##credits)
 
 ## Basic Information
 
@@ -44,9 +44,11 @@ A link for the Primero1° Amazon Kindle testing version can be emailed upon requ
 
 1. The main repository where I worked on during the development of the project is https://github.com/iqraceme/Primero1. However, this is not the forked version of the original website’s repository.
 
-2.I have added my project as a branch to the repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/Primero
+2.I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/Primero
 
-3.You can check the android repo on: https://github.com/iqraceme/Primero-Android-
+3.I have also added primero asa branch to sugar labs repo: https://github.com/sugarlabs/sugarizer/tree/iqraceme/primero
+
+4.You can check the android repo on: https://github.com/iqraceme/Primero-Android-
 
 **_Commits:_**
 
@@ -70,10 +72,9 @@ We have the following major features in Primero1°:
 6.New Audio based MathStix Activity added to Primero1° web version
 7.Primero1° Android app
 8.Primero1° Amazon Kindle app
-Primero1° web app
-All the web, Android and Amazon apps made mobile responsive for all screen sizes.
-Certain features of some activities removed and adjusted for small children
-Extensive documentation of the project
+9.Primero1° web app
+10.All the web, Android and Amazon apps made mobile responsive for all screen sizes.
+11.Certain features of some activities removed and adjusted for small children
 
 ### Languages and Technologies
 
@@ -204,7 +205,7 @@ Clone the repository
 
 ### Installation
 
-To run Sugarizer Application from the Web Browser (GNU Linux/Mac OS/Windows), you should launch it with a special option to enable access to local files.
+To run Application from the Web Browser (GNU Linux/Mac OS/Windows), you should launch it with a special option to enable access to local files.
 
 For Chrome, close ALL running instances of Chrome and re-launch it using the command line:
 chrome --allow-file-access-from-files index.html
@@ -243,7 +244,7 @@ $ npm install -g cordova
 
 npm install -g cordova
 
-2
+
 
 ## **3. Create a project**
 

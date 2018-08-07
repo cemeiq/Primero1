@@ -65,16 +65,16 @@ Do check out the code!
 We have the following major features in Primero1°:
 
 1. Primero1° Animated Loader
-2.Animated background in homeview
-3.Colored icons of all activities
-4.Colors added to specific activities
-5.Yellow and Green dropdowns for each Activity
-6.New Audio based MathStix Activity added to Primero1° web version
-7.Primero1° Android app
-8.Primero1° Amazon Kindle app
-9.Primero1° web app
-10.All the web, Android and Amazon apps made mobile responsive for all screen sizes.
-11.Certain features of some activities removed and adjusted for small children
+2. Animated background in homeview
+3. Colored icons of all activities
+4. Colors added to specific activities
+5. Yellow and Green dropdowns for each Activity
+6. New Audio based MathStix Activity added to Primero1° web version
+7. Primero1° Android app
+8. Primero1° Amazon Kindle app
+9. Primero1° web app
+10. All the web, Android and Amazon apps made mobile responsive for all screen sizes.
+11. Certain features of some activities removed and adjusted for small children
 
 ### Languages and Technologies
 
@@ -278,8 +278,6 @@ cd MyApp cordova platform add ios
 From the command line, run cordova run <platform name>.
 
 $ cordova run ios
-
- 
 
 # Credits
 

@@ -44,7 +44,7 @@ A link for the Primero1° Amazon Kindle testing version can be emailed upon requ
 
 1. The main repository where I worked on during the development of the project is https://github.com/iqraceme/Primero1. However, this is not the forked version of the original website’s repository.
 
-2.I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/primero
+2. I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/primero
 
 3.I have also added primero as a branch to sugar labs repo: https://github.com/sugarlabs/sugarizer
 

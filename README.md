@@ -2,21 +2,21 @@
 
 ## Table of Contents
 
-1. [Basic Information](https://github.com/iqraceme/Primero1/##basic-information)
+1. [Basic Information](https://github.com/iqraceme/Primero1/#basic-information)
 
-2. [About the Website/Project](https://github.com/iqraceme/Primero1/##about-the-project)
+2. [About the Website/Project](https://github.com/iqraceme/Primero1/#about-the-project)
 
-3. [Steps on how to use the Primero1 app](https://github.com/iqraceme/Primero1/##steps-on-how-to-use-the-primero1° app)
+3. [Steps on how to use the Primero1 app](https://github.com/iqraceme/Primero1/#steps-on-how-to-use-the-primero1-app)
 
-4. [Description of Files and Folders](https://github.com/iqraceme/Primero1/##description-of-files-and-folders)
+4. [Description of Files and Folders](https://github.com/iqraceme/Primero1/#description-of-files-and-folders)
 
-5. [Design Layout of Website/Project](https://github.com/iqraceme/Primero1/##design-layout-of-website/project)
+5. [Design Layout of Website/Project](https://github.com/iqraceme/Primero1/#design-layout-of-website/project)
 
-6. [Addendum for iOS App](https://github.com/iqraceme/Primero1/##addendum-for-ios-app)
+6. [Addendum for iOS App](https://github.com/iqraceme/Primero1/#addendum-for-ios-app)
 
-7. [Credits](https://github.com/iqraceme/Primero1/##credits)
+7. [Credits](https://github.com/iqraceme/Primero1/#credits)
 
-## Basic Information
+# Basic Information
 
 * Project Name - **Primero1° (Sugarizer Primero1°)**.
 
@@ -28,7 +28,7 @@
 
 * As part of - **Google Summer Of Code(GSOC) 2018**
 
-## About the Project
+# About the Project
 
 ### Introduction
 
@@ -102,7 +102,7 @@ The loader screen is enabled for:
 
 7. Small devices browsers like on Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile
 
-## Steps on how to use the Primero1° app
+# Steps on how to use the Primero1° app
 
 The following video link below explains the steps for non-technical individuals using the Primero1° App.
 
@@ -131,7 +131,8 @@ The steps below explain how to use the Primero1° application.
 10.The next Activity icon is made up of purple colored blocks. This is Memorize Activity. The Memorize Activity allows users to find matching tiles from the selection provided. The tiles include things like simple math problems and their answers and capital and lower case letters. To look at a tile, click on it. You can only look at 1 tile from Group 1 or 2 at the same time.
 
 11.The last Activity featured on is the Clock Activity. Users can choose between the simple clock and the nice clock. Users can also choose to display the time and date in digital form if needed.
-## Description of Files and Folders
+
+# Description of Files and Folders
 
 ### Activities Folder:
 
@@ -173,7 +174,7 @@ This will contain:
 
 4. Other folders
 
-## Design Layout of Website/Project
+# Design Layout of Website/Project
 
 **_Few Screenshots:_**
 
@@ -216,7 +217,7 @@ open -n /Applications/Google\ Chrome.app --args --allow-file-access-from-files
 For Firefox, type in the address bar:
 about:config
 
-## Addendum for iOS App
+# Addendum for iOS App
 
 Please follow the following steps for the development of an ios app.
 
@@ -280,7 +281,7 @@ $ cordova run ios
 
  
 
-## Credits
+# Credits
 
 The credits goes to all my mentors who guided at every step of the project.
 

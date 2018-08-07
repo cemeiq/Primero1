@@ -32,11 +32,11 @@
 
 ### Introduction
 
-This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/Primero/].
+This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/primero/].
 
 The Primero1° Android beta testing version is available at:
 
-https://play.google.com/apps/testing/com.sugars.Primero1
+https://play.google.com/apps/testing/com.sugars.primero1
 
 A link for the Primero1° Amazon Kindle testing version can be emailed upon request.
 
@@ -44,15 +44,15 @@ A link for the Primero1° Amazon Kindle testing version can be emailed upon requ
 
 1. The main repository where I worked on during the development of the project is https://github.com/iqraceme/Primero1. However, this is not the forked version of the original website’s repository.
 
-2.I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/Primero
+2.I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/primero
 
-3.I have also added primero asa branch to sugar labs repo: https://github.com/sugarlabs/sugarizer/tree/iqraceme/primero
+3.I have also added primero as a branch to sugar labs repo: https://github.com/sugarlabs/sugarizer
 
 4.You can check the android repo on: https://github.com/iqraceme/Primero-Android-
 
 **_Commits:_**
 
-1. You can see all my commits at the link – https://github.com/iqraceme/Primero/commits/master. You can check the timestamps to see the commits related to any particular day.
+1. You can see all my commits at the link – https://github.com/iqraceme/Primero1/commits/master. You can check the timestamps to see the commits related to any particular day.
 
 **_Blog Posts:_**
 

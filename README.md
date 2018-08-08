@@ -46,7 +46,7 @@ A link for the Primero1° Amazon Kindle testing version can be emailed upon requ
 
 2. I have added my project as a branch to the forked repo of the original website’s repository: https://github.com/iqraceme/Primero/tree/iqraceme/primero
 
-3. I have also added primero as a branch to sugar labs repo: https://github.com/sugarlabs/sugarizer
+3. I have also added primero as a branch to sugar labs repo on: https://github.com/sugarlabs/sugarizer/tree/iqraceme/primero
 
 4. You can check the android repo on: https://github.com/iqraceme/Primero-Android-
 

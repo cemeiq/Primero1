@@ -110,27 +110,27 @@ https://youtu.be/bW51n7ifaXs
 
 The steps below explain how to use the Primero1° application.
 
-1.Log onto the http://iqragsoc.com/iqragsoc.com/Primero or open the android/kindle app
+1. Log onto the http://iqragsoc.com/iqragsoc.com/Primero or open the android/kindle app
 
-2.You will see a blue Primero1° loader.
+2. You will see a blue Primero1° loader.
 
-3.The loader will disappear after a few seconds and it will be redirected to the main page of Primero1° app.
+3. The loader will disappear after a few seconds and it will be redirected to the main page of Primero1° app.
 
-4.You will see icons on the homepage of Primero1°. Each of these icons leads to an Activity.
+4. You will see icons on the homepage of Primero1°. Each of these icons leads to an Activity.
 
-5.You can hover your mouse on any of these icons. On hovering, you will see a green button. The green button will start a new Activity.
+5. You can hover your mouse on any of these icons. On hovering, you will see a green button. The green button will start a new Activity.
 
-6.The first Activity in the grid is the Maze Activity. The Maze Activity, featured in Primero1°, lets users navigate the smiley face to the end of the maze. The levels become more difficult as game proceeds. If you wish to exit an existing Activity, such as this one, simply click on the red button on the upper right hand side of the screen – you will be immediately taken to the home screen of the application.
+6. The first Activity in the grid is the Maze Activity. The Maze Activity, featured in Primero1°, lets users navigate the smiley face to the end of the maze. The levels become more difficult as game proceeds. If you wish to exit an existing Activity, such as this one, simply click on the red button on the upper right hand side of the screen – you will be immediately taken to the home screen of the application.
 
-7.The Activity next to the Maze icon is the Paint Activity. The Paint Activity in Primero1° can be used to create artistic pieces using the draw, fill, and color features. If you wish to resume your last session of the Activity, click on the red button to return to the home screen. When you wish to resume your session, hover your cursor over the desired logo and click on the yellow circle. This will allow you to resume your Activity where you left off.
+7. The Activity next to the Maze icon is the Paint Activity. The Paint Activity in Primero1° can be used to create artistic pieces using the draw, fill, and color features. If you wish to resume your last session of the Activity, click on the red button to return to the home screen. When you wish to resume your session, hover your cursor over the desired logo and click on the yellow circle. This will allow you to resume your Activity where you left off.
 
-8.Move your cursor to the third Activity icon.The third Activity featured in Primero1° is the TamTam MicroActivity. It can be used to learn about different sound-picture associations. To select a sound category, click on the pink button of your choice. To listen to a sound clip, simply click on the desired purple button.
+8. Move your cursor to the third Activity icon.The third Activity featured in Primero1° is the TamTam MicroActivity. It can be used to learn about different sound-picture associations. To select a sound category, click on the pink button of your choice. To listen to a sound clip, simply click on the desired purple button.
 
-9.Let us now look at the Reflection Activity. You can find it by moving your cursor to the fourth Activity icon. The end goal is to edit the colors of all circles on both sides of the game until they are completely symmetrical. Select the reflection Activity from the black bar found on the top of the application page. To change the color of any circle, simply click until your desired color.
+9. Let us now look at the Reflection Activity. You can find it by moving your cursor to the fourth Activity icon. The end goal is to edit the colors of all circles on both sides of the game until they are completely symmetrical. Select the reflection Activity from the black bar found on the top of the application page. To change the color of any circle, simply click until your desired color.
 
-10.The next Activity icon is made up of purple colored blocks. This is Memorize Activity. The Memorize Activity allows users to find matching tiles from the selection provided. The tiles include things like simple math problems and their answers and capital and lower case letters. To look at a tile, click on it. You can only look at 1 tile from Group 1 or 2 at the same time.
+10. The next Activity icon is made up of purple colored blocks. This is Memorize Activity. The Memorize Activity allows users to find matching tiles from the selection provided. The tiles include things like simple math problems and their answers and capital and lower case letters. To look at a tile, click on it. You can only look at 1 tile from Group 1 or 2 at the same time.
 
-11.The last Activity featured on is the Clock Activity. Users can choose between the simple clock and the nice clock. Users can also choose to display the time and date in digital form if needed.
+11. The last Activity featured on is the Clock Activity. Users can choose between the simple clock and the nice clock. Users can also choose to display the time and date in digital form if needed.
 
 # Description of Files and Folders
 
@@ -239,8 +239,6 @@ Please follow the following steps for the development of an ios app.
 
 Cordova command-line runs on [Node.js](http://nodejs.org/) and is available on [NPM](https://npmjs.org/package/cordova). Follow [platform specific guides](https://cordova.apache.org/docs/en/latest/index.html#develop-for-platforms) to install additional platform dependencies. Open a command prompt or Terminal, and type npm install -g cordova.
 
-Copy
-
 $ npm install -g cordova
 
 npm install -g cordova
@@ -253,13 +251,12 @@ Create a blank Cordova project using the command-line tool. Navigate to the dire
 
 For a complete set of options, type cordova help create.
 
-Copy
 
 $ cordova create MyApp
 
 cordova create MyApp
 
-**4. ****Add a platform**
+## **3. Add a Platform**
 
 After creating a Cordova project, navigate to the project directory. From the project directory, you need to add a platform for which you want to build your app.
 
@@ -282,4 +279,3 @@ $ cordova run ios
 # Credits
 
 The credits goes to all my mentors who guided at every step of the project.
-

@@ -110,7 +110,7 @@ https://youtu.be/bW51n7ifaXs
 
 The steps below explain how to use the Primero1° application.
 
-1. Log onto the qragsoc.com/iqragsoc.com/primero/ or open the android/kindle app
+1. Log onto the iqragsoc.com/iqragsoc.com/primero/ or open the android/kindle app
 
 2. You will see a blue Primero1° loader.
 

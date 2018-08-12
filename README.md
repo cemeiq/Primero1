@@ -34,6 +34,8 @@
 
 This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/primero/].
 
+The Final report of GSoC 2018 is available at: https://iqragsoc.wordpress.com/2018/07/30/gsoc-final-project-report/
+
 The Primero1° Android beta testing version is available at:
 
 https://play.google.com/apps/testing/com.sugars.primero1

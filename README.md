@@ -32,7 +32,7 @@
 
 ### Introduction
 
-This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/primero/].
+This repository contains the code for the Primero1° version of Sugarizer (https://github.com/iqraceme/Primero1). This repository code base was used for the development of the GSoC 2018 project, Primero1°,  under the organization Sugar Labs. The changes made during the GSoC period can be viewed at [https://github.com/iqraceme/Primero1]. The repository for the original sugarizer website is located at [https://github.com/sugarlabs/sugarizer]. The work during GSoC was done in the repository [https://github.com/iqraceme/Primero1]. A live preview of the website is hosted and can be viewed at [http://iqragsoc.com/iqragsoc.com/primero1/].
 
 The Final report of GSoC 2018 is available at: https://iqragsoc.wordpress.com/2018/07/30/gsoc-final-project-report/
 
@@ -112,7 +112,7 @@ https://youtu.be/bW51n7ifaXs
 
 The steps below explain how to use the Primero1° application.
 
-1. Log onto the iqragsoc.com/iqragsoc.com/primero/ or open the android/kindle app
+1. Log onto the iqragsoc.com/iqragsoc.com/primero1/ or open the android/kindle app
 
 2. You will see a blue Primero1° loader.
 
